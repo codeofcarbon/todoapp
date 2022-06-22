@@ -1,5 +1,5 @@
 package com.codeofcarbon.todoapp.entities;
 
 public enum TaskState {
-    ACTIVE, DONE
+    ACTIVE, COMPLETED
 }
