@@ -10,11 +10,11 @@ import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
 @Entity(name = "tasks")
+//@Table(name = "TASKS")
 @Getter
 @Setter
-//@NoArgsConstructor
-@RequiredArgsConstructor
-//@AllArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class Task {
 
     @Id
@@ -24,7 +24,6 @@ public class Task {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime date = LocalDateTime.now();
     @NotBlank
-//    @Length(min = 3, max = 40)
     private String name;
     @Enumerated(EnumType.STRING)
     private TaskState taskState = TaskState.ACTIVE;
@@ -33,7 +32,8 @@ public class Task {
     @ManyToOne
     private User owner;
 
-    public Task(LocalDateTime now, String nowy_task, TaskState active, Priority high, User user) {
+    public Task(LocalDateTime now, String nowy_task,
+                TaskState active, Priority high, User user) {      // todo
         this.date = now;
         this.name = nowy_task;
         this.taskState = active;

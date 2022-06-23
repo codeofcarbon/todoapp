@@ -1,15 +1,9 @@
 package com.codeofcarbon.todoapp;
 
-import com.codeofcarbon.todoapp.entities.Priority;
-import com.codeofcarbon.todoapp.entities.Task;
-import com.codeofcarbon.todoapp.entities.TaskState;
-import com.codeofcarbon.todoapp.entities.User;
-import com.codeofcarbon.todoapp.repositories.TaskRepository;
-import com.codeofcarbon.todoapp.repositories.UserRepository;
+import com.codeofcarbon.todoapp.entities.*;
+import com.codeofcarbon.todoapp.repositories.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
+import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.LocalDateTime;

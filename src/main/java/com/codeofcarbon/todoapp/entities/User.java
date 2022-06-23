@@ -12,6 +12,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Entity(name = "users")
+//@Table(name = "USERS")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -37,10 +38,11 @@ public class User implements UserDetails {
     private Set<Role> roles = new HashSet<>();
 
 
-    public User(String userLogin, String password) {
+    public User(String userLogin, String password) {            // todo
         this.userLogin = userLogin;
         this.password = password;
     }
+
     @Override
     public List<GrantedAuthority> getAuthorities() {
         return roles.stream()

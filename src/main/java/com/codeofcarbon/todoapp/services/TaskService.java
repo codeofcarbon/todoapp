@@ -52,7 +52,9 @@ public class TaskService {
 
         taskById.setTaskState(TaskState.COMPLETED);
         taskRepository.save(taskById);
-        return TaskDTO.mapToTaskDTO(taskById);
+        Task updatedTask = taskRepository.findById(taskById.getId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Failed to update task state"));
+        return TaskDTO.mapToTaskDTO(updatedTask);
     }
 
     @Transactional
