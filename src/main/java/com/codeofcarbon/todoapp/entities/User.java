@@ -24,9 +24,9 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
-    @NotBlank
+    @NotNull
     private String userLogin;
-    @NotBlank
+    @NotNull
     @Size(min = 8, message = "password must have at least 8 characters")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
